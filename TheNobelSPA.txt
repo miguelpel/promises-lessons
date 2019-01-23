@@ -1,0 +1,26 @@
+Main:
+
+Button.addEventListener('click', searchLaureatesAndDisplay)
+
+function searchLaureatesAndDisplay(){
+	searchLaureates(category, year);
+	searchLaureates.addEventListener(stateChange, processReturnValue)
+}
+
+function searchLaureates(category, year){
+	request = new XMLHTTPRequest();
+	request.open('GET', 'NobelPrizeApiUrl');
+	request.send();
+	When request returns(laureatesList or error);
+}
+
+displayLaureates(laureatesList){
+	Read the laureates names;
+	go To the HTML board;
+	Write the name of laureates.
+}
+
+processReturnValue(laureatesList or error){
+	if (error) console.log(error)
+	else if (LaureatesList) displayLaureates(laureatesList)
+}
